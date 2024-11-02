@@ -1,6 +1,6 @@
 // import SampleBlogs from "@/config/sampleblogs";
 import React from "react"; 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
