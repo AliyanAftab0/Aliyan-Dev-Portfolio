@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SiteConfig from "./config/site";
@@ -7,9 +7,10 @@ import NavBar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider"
 import Footer from "./components/Footer";
 
-const fontSans = FontSans({
+const fontSans = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"]
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased Aliyan-Dev",
+          "min-h-screen bg-background antialiased",
           fontSans.variable
         )}
       >

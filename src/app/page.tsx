@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   const el = useRef(null);
@@ -20,23 +22,16 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap"
-        rel="stylesheet"
-      />
       <main>
-        <section className="container px-4 py-10 Aliyan-Dev mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
+        <section className="container px-4 py-10 text-main mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
           <div className="w-full text-center lg:text-left lg:w-1/2 lg:-mt-8">
             <h1 className="text-3xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
-              <span className="font-bold Aliyan-Dev text-[3rem]">
+              <span className="font-bold text-main text-[3rem]">
                 Welcome To <span className="text-blue-600">&lt;/&gt;</span>
                 Aliyan<span className="text-blue-600">Devs</span>
               </span>
               <br />
-              <span className="font-bold Aliyan-Dev border-b-4 border-blue-600 decoration-primary">
+              <span className="font-bold text-main border-b-4 border-blue-600 decoration-primary">
                 <span ref={el} />
               </span>
             </h1>
@@ -47,6 +42,15 @@ export default function Home() {
               scalable applications. Explore my projects and see how I can bring
               your ideas to life!
             </p>
+            <br />
+            <Link
+              href="/AliCV.pdf"
+              target="_blank"
+              className={buttonVariants({ variant: "default" })}
+              download="AliCV.pdf"
+            >
+              Download Resume
+            </Link>
           </div>
           <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
             <Image
@@ -59,7 +63,7 @@ export default function Home() {
           </div>
         </section>
         <div className="border-t border-gray-300 mx-10 dark:border-gray-700 mt-8 pt-4 text-center"></div>
-        <section className="text-gray-600 Aliyan-Dev text-xl dark:text-gray-50 body-font">
+        <section className="text-gray-600 text-main text-xl dark:text-gray-50 body-font">
           <div className="container px-5 py-24 mx-auto">
             <h2 className="text-4xl pb-8 mb-4 font-bold text-center">
               About Our Services
@@ -98,6 +102,5 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </>
   );
 }

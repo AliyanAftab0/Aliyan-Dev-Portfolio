@@ -61,13 +61,13 @@ const NavBar = () => {
   return (
     <nav className="h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-10">
       <LoadingBar color="#6028ff" progress={progress} onLoaderFinished={() => setProgress(0)} />
-      <div className="text-lg font-bold Aliyan-Dev md:text-2xl">
+      <div className="text-lg font-bold text-main md:text-2xl">
         <Link href={"/"}>
           <span className="text-blue-600">&lt;/&gt;</span>Aliyan
           <span className="text-blue-600">Devs</span>
         </Link>
       </div>
-      <div className="md:flex w-full justify-end items-center Aliyan-Dev text-lg hidden space-x-4">
+      <div className="md:flex w-full justify-end items-center text-main text-lg hidden space-x-4">
         <button
           className={`hover:border-b-2 border-blue-600 ${
             activeSection === "home" ? "border-b-2 border-blue-600" : ""
@@ -94,6 +94,14 @@ const NavBar = () => {
         </button>
         <button
           className={`hover:border-b-2 border-blue-600 ${
+            activeSection === "blog" ? "border-b-2 border-blue-600" : ""
+          }`}
+          onClick={() => handleLinkClick("blog")}
+        >
+          <Link href={"/blog"} scroll={false}>Blogs</Link>
+        </button>
+        <button
+          className={`hover:border-b-2 border-blue-600 ${
             activeSection === "contact" ? "border-b-2 border-blue-600" : ""
           }`}
           onClick={() => handleLinkClick("contact")}
@@ -108,7 +116,7 @@ const NavBar = () => {
           <SheetTrigger>
             <Menu />
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent side={"bottom"}>
             <MobileNav />
           </SheetContent>
         </Sheet>

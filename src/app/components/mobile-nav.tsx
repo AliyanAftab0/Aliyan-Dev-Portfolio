@@ -33,7 +33,7 @@ const MobileNav = () => {
 
   return (
     <div className="flex items-center space-y-4 sm:hidden">
-      <div className="flex flex-col m-auto my-10 text-lg font-medium Aliyan-Dev">
+      <div className="flex flex-col m-auto my-10 text-lg font-medium text-main">
         <button
           className={`py-3 text-lg ${
             activeSection === "home" ? "text-blue-600" : ""
@@ -62,6 +62,16 @@ const MobileNav = () => {
         >
           <Link href="/projects" scroll={false} className="hover:text-blue-600">
             Projects
+          </Link>
+        </button>
+        <button
+          className={`py-3 text-lg ${
+            activeSection === "blog" ? "text-blue-600" : ""
+          } transition-all duration-300 ease-in-out`}
+          onClick={() => handleLinkClick("blog")}
+        >
+          <Link href="/blog" scroll={false} className="hover:text-blue-600">
+            Blogs
           </Link>
         </button>
         <button

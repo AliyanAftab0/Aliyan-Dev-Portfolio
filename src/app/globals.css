@@ -1,15 +1,17 @@
-/* Import Tailwind base, components, and utilities */
+/* Import Google Fonts*/
+@import url("https://use.typekit.net/nrq5ive.css");
+
+/* Tailwind CSS base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import the New Amsterdam font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
-
 /* Base Layer Styles */
 @layer base {
-  /* Set root variables for light and dark mode */
+  /* Set root variables for light and dark modes */
   :root {
+    /* --font-main: 'Montserrat'; */
+    --font-sans: 'Montserrat', sans-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -39,6 +41,8 @@
 
   /* Dark Mode Variables */
   .dark {
+    /* --font-main: 'Montserrat'; */
+    --font-sans: 'Montserrat', sans-serif;
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -65,30 +69,20 @@
     --chart-5: 340 75% 55%;
   }
 
-  /* Apply base styles */
+  /* Apply global body styles */
+  body {
+    /* font-family: var(--font-main); */
+    @apply bg-background text-foreground text-main;
+  }
+
+  /* Ensure all elements use the border color */
   * {
     @apply border-border;
   }
-
-  /* Apply global body styles including font */
-  body {
-    font-family: "New Amsterdam", sans-serif;
-    @apply bg-background text-foreground Aliyan-Dev;
-  }
 }
 
-/* Custom class for New Amsterdam font */
-.Aliyan-Dev {
-  font-family: "New Amsterdam", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 1.5px;
-}
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Custom Utility Classes */
+.text-main {
+  font-family: var(--font-sans);
+  font-style: normal
 }

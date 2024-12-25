@@ -13,14 +13,7 @@ const Contact = () => {
   }
 
   return (
-    <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap"
-        rel="stylesheet"
-      />
-      <section className="text-gray-600 sm:mx-40 Aliyan-Dev body-font relative">
+      <section className="text-gray-600 sm:mx-40 text-main body-font relative">
         <div className="container px-5 py-3 mx-auto flex flex-wrap">
           <div className="mx-12 my-10 dark:text-white">
             <div className="flex flex-col gap-[1.5rem]">
@@ -146,7 +139,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </>
   );
 };
 

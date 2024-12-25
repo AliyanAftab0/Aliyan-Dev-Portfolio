@@ -1,21 +1,15 @@
 "use client"
+import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript,SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("Skills");
 
   return (
-    <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap"
-        rel="stylesheet"
-      />
-
       <div className="bg-gray-100 dark:bg-slate-950 min-h-screen flex flex-col items-center justify-center py-32">
         {/* Main About Section */}
         <div className="w-full max-w-4xl bg-white dark:bg-slate-900 shadow-lg rounded-lg p-8">
@@ -50,6 +44,17 @@ export default function About() {
               </p>
             </div>
           </div>
+          <br />
+          <div className="flex justify-center items-center mx-auto">
+            <Link
+              href="/AliCV.pdf"
+              target="_blank"
+              className={buttonVariants({ variant: "default" })}
+              download="AliCV.pdf"
+            >
+              Download Resume
+            </Link>
+          </div>
         </div>
 
         {/* Navigation Section */}
@@ -57,25 +62,22 @@ export default function About() {
           <nav className="flex flex-row justify-around w-full text-center text-lg text-gray-800 dark:text-white space-x-6">
             <button
               onClick={() => setActiveTab("Skills")}
-              className={`font-semibold ${
-                activeTab === "Skills" ? "border-b-2 border-blue-500" : ""
-              }`}
+              className={`font-semibold ${activeTab === "Skills" ? "border-b-2 border-blue-500" : ""
+                }`}
             >
               Skills
             </button>
             <button
               onClick={() => setActiveTab("Education")}
-              className={`font-semibold ${
-                activeTab === "Education" ? "border-b-2 border-blue-500" : ""
-              }`}
+              className={`font-semibold ${activeTab === "Education" ? "border-b-2 border-blue-500" : ""
+                }`}
             >
               Education
             </button>
             <button
               onClick={() => setActiveTab("Experience")}
-              className={`font-semibold ${
-                activeTab === "Experience" ? "border-b-2 border-blue-500" : ""
-              }`}
+              className={`font-semibold ${activeTab === "Experience" ? "border-b-2 border-blue-500" : ""
+                }`}
             >
               Experience
             </button>
@@ -87,31 +89,31 @@ export default function About() {
           <div className="bg-white dark:bg-slate-900 shadow-lg rounded-lg p-8 w-full text-center text-gray-800 dark:text-white">
             {activeTab === "Skills" && (
               <div>
-              <h2 className="text-2xl font-semibold mb-6">Skills</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                {[
-                  { name: "HTML", icon: <FaHtml5 /> },
-                  { name: "CSS", icon: <FaCss3Alt /> },
-                  { name: "JavaScript", icon: <FaJs /> },
-                  { name: "TypeScript", icon: <SiTypescript /> },
-                  { name: "Node.js", icon: <FaNodeJs /> },
-                  { name: "React", icon: <FaReact /> },
-                  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-                  { name: "Next.js", icon: <SiNextdotjs /> },
-                  { name: "Python", icon: <FaPython /> },
-                ].map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center p-4 bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all"
-                  >
-                    <div className="text-3xl mb-2">{skill.icon}</div>
-                    <span className="text-lg font-medium text-gray-700 dark:text-gray-200">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+                <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                  {[
+                    { name: "HTML", icon: <FaHtml5 /> },
+                    { name: "CSS", icon: <FaCss3Alt /> },
+                    { name: "JavaScript", icon: <FaJs /> },
+                    { name: "TypeScript", icon: <SiTypescript /> },
+                    { name: "Node.js", icon: <FaNodeJs /> },
+                    { name: "React", icon: <FaReact /> },
+                    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+                    { name: "Next.js", icon: <SiNextdotjs /> },
+                    { name: "Python", icon: <FaPython /> },
+                  ].map((skill, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center p-4 bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all"
+                    >
+                      <div className="text-3xl mb-2">{skill.icon}</div>
+                      <span className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
             )}
             {activeTab === "Education" && (
               <div>
@@ -130,6 +132,5 @@ export default function About() {
           </div>
         </div>
       </div>
-    </>
   );
 }
