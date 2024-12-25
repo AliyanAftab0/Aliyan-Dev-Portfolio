@@ -22,6 +22,8 @@ export const metadata = {
   description: 'Explore our latest blogs on technology, programming, and design. Stay updated with insightful content from our team.',
 };
 
+export const revalidate = 10;
+
 export default async function Page({ params: { slug } }: { params: { slug: string } }) {
   const query = `*[_type=='post' && slug.current=="${slug}"]{
     title,summary,image,content,

@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: 'Explore our latest blogs on technology, programming, and design. Stay updated with insightful content from our team.',
 };
 
+export const revalidate = 10;
+
 const BlogList = async () => {
   const query = `*[_type == 'post'] | order(_createdAt asc){
     summary, title, image, "slug": slug.current
