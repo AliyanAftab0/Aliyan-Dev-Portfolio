@@ -3,8 +3,8 @@ import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+import { client } from "../../../sanity/lib/client";
+import { urlFor } from "../../../sanity/lib/image";
 
 interface BlogPost {
   slug: string;
