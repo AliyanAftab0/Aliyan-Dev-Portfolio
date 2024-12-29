@@ -3,7 +3,7 @@ import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
-
+import { CommentSection } from '../../components/BlogCommentsWrapper';
 interface BlogPost {
   slug: string;
   title: string;
@@ -81,6 +81,9 @@ export default async function Page({ params: { slug } }: { params: { slug: strin
       >
         <PortableText value={post.content} components={components} />
       </section>
+
+      {/* Comments Section */}
+      <CommentSection />
     </article>
   );
 }
